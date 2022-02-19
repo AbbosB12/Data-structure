@@ -4,10 +4,12 @@ import java.util.Map;
 
 public class TwoSum {
     public static void main(String[] args) {
-        int[] myarray={2,7,9,11};
+        int[] myarray={2,7,9,11,4,5,1,8};
         System.out.println(Arrays.toString(twoSum1(myarray,9)));
         System.out.println("Optimal Solution .....");
         System.out.println(Arrays.toString(twoSum2(myarray,9)));
+        System.out.println("Two Pointer Solution .....");
+        System.out.println(Arrays.toString(twoSumTwoPointer(myarray,9)));
 
     }
     public static int[] twoSum1(int[] array, int target){
@@ -33,4 +35,19 @@ public class TwoSum {
     }
 
 
+
+    public static int[] twoSumTwoPointer(int[] array, int target) {
+        //Sort the array. (This has a cost to us !)
+        Arrays.sort(array);
+        //Define two index pointers i and j (i from 0 to length. / j from length to 0)
+        int i=0;
+        int j=array.length-1;
+        while (i < j) {
+            int sum= array[i]+array[j];
+            if(sum==target) return new int[]{i,j};
+            else if (sum<target) i++;
+            else j--;
+        }
+        return new int[] {};
+    }
 }
