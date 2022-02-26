@@ -40,7 +40,35 @@ public class MySinglyLinkedList {
 
         }
     }
-    void deleteNode() {
+    //deletes first item with the value
+    void deleteNode(int value) {
+        if (isEmpty())
+            System.out.println("No values with the value send!!!");
+        //first one
+        Node current=head;
+        Node prev=head;
+        while (current!=null){
+            if(current.value==value){
+                if(current ==head) {
+                    head = current.next;
+                    current.next=null;
+                    //last one
+                }else if(current ==tail){
+                    tail=prev;
+                    prev.next=null;
+                }else{
+                    //middle
+                    prev.next=current.next;
+                    current.next=null;
+                }
+                prev=current;
+                current=current.next;
+            }
+            size++;
+        }
+        //1=>2=>3=>null
+
+
 
     }
 
