@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/00-BigONotation/00-BigONotation.iml" filepath="$PROJECT_DIR$/00-BigONotation/00-BigONotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-Arrays/01-Arrays.iml" filepath="$PROJECT_DIR$/01-Arrays/01-Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-LinkedLists/02-LinkedLists.iml" filepath="$PROJECT_DIR$/02-LinkedLists/02-LinkedLists.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03-Stacks/03-Stacks.iml" filepath="$PROJECT_DIR$/03-Stacks/03-Stacks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-Queues/05-Queues.iml" filepath="$PROJECT_DIR$/05-Queues/05-Queues.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15-AlgorithmQuestions/15-AlgorithmQuestions.iml" filepath="$PROJECT_DIR$/15-AlgorithmQuestions/15-AlgorithmQuestions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Data-structure.iml" filepath="$PROJECT_DIR$/.idea/Data-structure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04-Recursion/Recursion.iml" filepath="$PROJECT_DIR$/04-Recursion/Recursion.iml" />
+    </modules>
+  </component>
+</project>
