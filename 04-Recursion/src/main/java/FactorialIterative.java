@@ -1,10 +1,6 @@
 public class FactorialIterative {
     public static void main(String[] args) {
         int num=6;
-        //6*5=30
-        //30*4=120
-        //120*3=360
-        //360*2=720
         //System.out.println("Iterative - " + num+"!= " + factorial(num));
         System.out.println("Recursive - " + num+"!= " + factorialR(num));
     }
