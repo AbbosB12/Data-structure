@@ -15,12 +15,13 @@ public class LRUCache {
     get
      */
 
-    public class DNode{
+    public class DNode {
         int key;
         int value;
         DNode prev;
         DNode next;
-        public DNode(){
+
+        public DNode() {
 
         }
 
@@ -29,7 +30,8 @@ public class LRUCache {
             this.value = value;
         }
     }
-    HashMap<Integer,DNode> cacheMap=new HashMap<>();
+
+    HashMap<Integer, DNode> cacheMap = new HashMap<>();
     int size;
     int capacity;
     DNode head;
@@ -37,54 +39,59 @@ public class LRUCache {
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
-        this.size=0;
-        this.head= new DNode();
-        this.tail=new DNode();
-        head.next=tail;
-        tail.prev=head;
+        this.size = 0;
+        this.head = new DNode();
+        this.tail = new DNode();
+        head.next = tail;
+        tail.prev = head;
     }
-    public void addNote(DNode node){
-        node.prev=head;
-        node.next=head.next;
 
-        head.next.prev=node;
-        head.next=node;
+    public void addNote(DNode node) {
+        node.prev = head;
+        node.next = head.next;
 
-    }
-    public void removeNode(DNode node){
-      DNode prev=node.prev;
-      DNode next=node.next;
-
-      prev.next=next;
-      next.prev=prev;
+        head.next.prev = node;
+        head.next = node;
 
     }
-    public void moveToHead(DNode node){
+
+    public void removeNode(DNode node) {
+        DNode prev = node.prev;
+        DNode next = node.next;
+
+        prev.next = next;
+        next.prev = prev;
+
+    }
+
+    public void moveToHead(DNode node) {
         removeNode(node);
         addNote(node);
     }
-    private DNode popTail(){
-        DNode popped=tail.prev;
+
+    private DNode popTail() {
+        DNode popped = tail.prev;
         removeNode(popped);
         return popped;
     }
 
-    public int get(int key){
-        DNode node=cacheMap.get(key);
-        if(node==null)
+    public int get(int key) {
+        DNode node = cacheMap.get(key);
+        if (node == null)
             return -1;
         moveToHead(node);
         return node.value;
     }
-    public void put(int key, int value){
-        DNode node=cacheMap.get(key);
-        if(node==null){
-            DNode newNode=new DNode(key,value);
-            cacheMap.put(key,newNode);
+
+    public void put(int key, int value) {
+        DNode node = cacheMap.get(key);
+        if (node == null) {
+            DNode newNode = new DNode(key, value);
+            cacheMap.put(key, newNode);
             addNote(newNode);
             size++;
-            if(size>capacity){
-                DNode tail=popTail();
+            if (size > capacity) {
+                DNode tail = popTail();
                 cacheMap.remove(tail.key);
                 size--;
             }

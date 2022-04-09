@@ -1,13 +1,14 @@
 public class Assignment4ReverseLinkedList {
     public static void main(String[] args) {
-        MySinglyLinkedList list=new MySinglyLinkedList();
+        MySinglyLinkedList list = new MySinglyLinkedList();
 
-        for(int i=0;i<10;i++) list.add(i);
+        for (int i = 0; i < 10; i++) list.add(i);
         list.printNodes();
         System.out.println("After reverse in one pass");
         reverse(list);
         list.printNodes();
     }
+
     // Assignment 4 Reverse the Nodes of Singly Linked List in one pass
     // O(n) time complexity , O(1) space complexity
     public static void reverse(MySinglyLinkedList list) {

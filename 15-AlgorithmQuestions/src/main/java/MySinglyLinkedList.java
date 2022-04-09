@@ -10,33 +10,37 @@ public class MySinglyLinkedList {
     }
 
     // methods here!
-    boolean isEmpty(){
-        return head==null;
+    boolean isEmpty() {
+        return head == null;
     }
+
     // Adds element into last position in the linked list
-    void add(int data){
+    void add(int data) {
         // create a new node with data value
-        Node node=new Node(data);
+        Node node = new Node(data);
         // check if empty
 
-        if(isEmpty()){head=tail=node;
-        }
-        else { // add element to last position
-            tail.next=node;
-            tail=node;
+        if (isEmpty()) {
+            head = tail = node;
+        } else { // add element to last position
+            tail.next = node;
+            tail = node;
         }
         size++;
     }
 
     void printNodes() {
-        Node current=head;
-        while(current!=null){
-            if(current.next==null) System.out.print(current.value + "=> null");
-            else System.out.print(current.value +"=>");
-            current=current.next;
+        Node current = head;
+        while (current != null) {
+            if (current.next == null) System.out.print(current.value + "=> null");
+            else System.out.print(current.value + "=>");
+            current = current.next;
         }
         System.out.println();
-    };
+    }
+
+    ;
+
     // deletes all items with the value
     void deleteNode(int value) {
         if (isEmpty()) System.out.println("No values with the value send!!!");
@@ -61,18 +65,21 @@ public class MySinglyLinkedList {
         }
 
     }
-    public int getKthFromLast(int k){
-        Node ptr1=head;
-        Node ptr2=head;
-        for(int i=0;i<k-1;i++) {ptr2=ptr2.next;
-        if (ptr2==null) return -1;
+
+    public int getKthFromLast(int k) {
+        Node ptr1 = head;
+        Node ptr2 = head;
+        for (int i = 0; i < k - 1; i++) {
+            ptr2 = ptr2.next;
+            if (ptr2 == null) return -1;
         }
-        while(ptr2.next!=null) {
-            ptr1=ptr1.next;
-            ptr2=ptr2.next;
+        while (ptr2.next != null) {
+            ptr1 = ptr1.next;
+            ptr2 = ptr2.next;
         }
         return ptr1.value;
     }
+
     public void removeKthFromLast(int k) {
         Node prevDelete = null;
         Node ptr1 = head;
@@ -97,6 +104,7 @@ public class MySinglyLinkedList {
             size--;
         }
     }
+
     // Assignment 4 Reverse the Nodes of Singly Linked List in one pass
     public void reverse() {
         if (isEmpty()) return;
@@ -112,27 +120,29 @@ public class MySinglyLinkedList {
         tail.next = null;
         head = previous;
     }
+
     // Assignment 3 Remove Duplicated values from SLL
     // O(n) time | O(1) space - where n is the number of nodes in the Linked List
     void removeDuplicatesFromLinkedList() {
-      Node current = head;
+        Node current = head;
         while (current != null) {
             Node nextDistinctNode = current.next;
-            while (nextDistinctNode != null && nextDistinctNode.value == current.value){
-            nextDistinctNode = nextDistinctNode.next;
+            while (nextDistinctNode != null && nextDistinctNode.value == current.value) {
+                nextDistinctNode = nextDistinctNode.next;
             }
-        current.next = nextDistinctNode;
-        current = nextDistinctNode;
+            current.next = nextDistinctNode;
+            current = nextDistinctNode;
         }
     }
-    int indexOf(int value){
-        int pos=0;
-        Node current=head;
-        if (isEmpty()) return-1;
-        while(current!=null) {
-            if (current.value==value) return pos;
+
+    int indexOf(int value) {
+        int pos = 0;
+        Node current = head;
+        if (isEmpty()) return -1;
+        while (current != null) {
+            if (current.value == value) return pos;
             pos++;
-            current=current.next;
+            current = current.next;
         }
         return -1;
     }

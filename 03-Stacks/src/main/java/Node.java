@@ -1,10 +1,12 @@
 public class Node<T> {
     private T value;
     private Node next;
-//add constructors , getters and setters
-public Node(T value){
-    this.value=value;
-}
+
+    //add constructors , getters and setters
+    public Node(T value) {
+        this.value = value;
+    }
+
     public T getValue() {
         return value;
     }
