@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MyTree {
     public Node root;
 
@@ -57,5 +60,64 @@ public class MyTree {
         System.out.print(root.value+", ");
 
     }
+    public void levelOrderTraversal(){
+        if(root==null)
+            return;
+        Queue<Node>queue= new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            Node toVisit=queue.poll();
+            System.out.print(toVisit.value+", ");
+            if(toVisit.leftChild!=null)
+                queue.add(toVisit.leftChild);
+            if(toVisit.rightChild!=null)
+                queue.add(toVisit.rightChild);
+        }//end while
+    }//end levelOrder
+    //Task -1 implement contains method
+public boolean contains(int value){
+        if(root==null)
+            return false;
+        Node current=root;
+        while (current!=null){
+            if(value < current.value) {
+                current = current.leftChild;
+            }else if (value>current.value){
+                current=current.rightChild;
+            }else {
+                return true;
+            }
+        }
+        return false;
+}
+//Task-2 return if the node is a leaf
+public boolean isLeaf(Node node){
+      return node.leftChild==null && node.rightChild==null;
+}
+//Task-3 print leaves of a BST
+public void printLeaves(Node root){
+        if (root==null) return;
+        if(isLeaf(root))
+        System.out.print(root.value+", ");
+        printLeaves(root.leftChild);
+        printLeaves(root.rightChild);
 
+}
+//Task-4 count leaves of a BST
+public int countLeaves(Node root){
+    if (root==null) return 0;
+    if(isLeaf(root)) return 1;
+    return countLeaves(root.leftChild)+countLeaves(root.rightChild);
+
+}
+//Task-5 sum of leaves values of a BST
+public int  findSumOfLeavesR(Node root){
+    if (root==null) return 0;
+    if(isLeaf(root)) return root.value;
+    return findSumOfLeavesR(root.leftChild)+findSumOfLeavesR(root.rightChild);
+}
+//Task-6
+    public int height(Node root){
+
+    }
 }
