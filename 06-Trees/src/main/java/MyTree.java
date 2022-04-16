@@ -111,10 +111,10 @@ public int countLeaves(Node root){
 
 }
 //Task-5 sum of leaves values of a BST
-public int  findSumOfLeavesR(Node root){
+public int  findSumOfLeaves(Node root){
     if (root==null) return 0;
     if(isLeaf(root)) return root.value;
-    return findSumOfLeavesR(root.leftChild)+findSumOfLeavesR(root.rightChild);
+    return findSumOfLeaves(root.leftChild)+findSumOfLeaves(root.rightChild);
 }
 //Task-6 Height of a node in a BST
     public int height(Node root){
