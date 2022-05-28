@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Heaps" />
         <module name="04-Recursion" />
+        <module name="08-Search" />
         <module name="06-Trees" />
         <module name="02-LinkedLists" />
         <module name="00-BigONotation" />
